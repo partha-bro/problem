@@ -1,7 +1,7 @@
 <?php
-	$tittle = 'code';
+	$tittle = 'code ['.date("d-M-Y").']';
 	require_once("theme.html");
-	
+
 	$dir = "problem";
 
 		// Open a directory, and read its contents

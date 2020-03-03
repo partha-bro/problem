@@ -17,10 +17,14 @@ For each game, print YES on a new line if all the ladybugs can be made happy thr
 As an example, b=[YYR_B_BR]. You can move the rightmost B and R to make b=[YYRRBB__] and all the ladybugs are happy.";
 	require_once("../../theme.html");
 
-	$b = "X_Y__X";
-	$result = happyLadybugs($b);
-	echo "input string: $b <br/>";
-	echo "$result";
+	$b = ["4","7","RBY_YBR","6","X_Y__X","2","__","6","B_RRBR"];
+	foreach ($b as $key => $value) {
+		# code...
+		$result = happyLadybugs($value);	
+		echo "input string: $value <br/>";
+		echo "$result <br/>";
+		}
+	
 
 	function happyLadybugs($b) {
 		if (is_numeric($b) == null) { 	//no validate number
@@ -35,20 +39,17 @@ As an example, b=[YYR_B_BR]. You can move the rightmost B and R to make b=[YYRRB
 				for ($i=0; $i < count($arr); $i++) { 
 					# code...
 					if(is_numeric($arr[$i])){	//validate number in each location
-						echo "no happy because number with string!<br/>";
+						return "no happy because number with string!<br/>";
 						$num++;
 						break;
 					}elseif ($arr[$i] != strtoupper($arr[$i])) {
-						echo "no happy because small char!<br/>";
+						return "no happy because small char!<br/>";
 						$small++;
 						break;
 					}elseif ($arr[$i] == "_") {
 							$space++;
 							break;
-					}else{
-						
-					}
-
+					}else{}
 				}
 			if ($space == 0 and $small == 0 and $num == 0) {
 				# code...
@@ -63,9 +64,9 @@ As an example, b=[YYR_B_BR]. You can move the rightmost B and R to make b=[YYRRB
 						}
 					}
 				if ($count == count($flag)) {
-						return "YES";
+						return "YES<br/>";
 					}else{
-						return "NO";
+						return "NO<br/>";
 					}	
 			}
 			
@@ -87,17 +88,14 @@ As an example, b=[YYR_B_BR]. You can move the rightmost B and R to make b=[YYRRB
 					}
 				if ($count == count($flag)) {
 						# code...
-						return "YES";
+						return "YES<br/>";
 					}else{
-						return "NO";
+						return "NO<br/>";
 					}	
 				// return "make logic<br/>";
-				
 			}			
 			
 		}else{
-			echo "number found!<br/>";
-		}
-
-
+			return "number found!<br/>";
+		}	
 	}

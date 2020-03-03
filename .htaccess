@@ -1,0 +1,12 @@
+#Protect Directory
+AuthUserFile D:\portal\xampp\htdocs\test\rapid\.htpasswd
+AuthName "ProSheild"
+AuthType Basic
+require valid-user
+
+#blick directory access
+Options All -Indexes
+
+#block caching
+Header unset Cache-Control
+Header append Cache-Control "no-cache, must-revalidate"
