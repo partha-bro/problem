@@ -3,7 +3,13 @@ body{
 		background-color: #000000;
 		font-family: Comic Sans MS;
 		text-align: center;
+		color: white;
+
 	}
 h1{
 	color:yellow;
+	font-size: 20px;
+}
+hr{
+	background-color: red;
 }
