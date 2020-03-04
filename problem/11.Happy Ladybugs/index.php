@@ -1,5 +1,7 @@
 <?php
-	$tittle = "Happy Ladybugs is a board game having the following properties:<br/>
+
+	$title = "Happy Ladybugs";
+	$question = "Happy Ladybugs is a board game having the following properties:<br/>
 
     1.The board is represented by a string, b, of length n. The i character of the string,b[i], denotes the i cell of the board.<br/>
 

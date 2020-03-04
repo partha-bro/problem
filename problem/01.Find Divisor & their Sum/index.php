@@ -1,5 +1,6 @@
 <?php
-	$tittle = 'Find Divisor & their Sum'; 
+	$title = "Find Divisor & their Sum";
+	$question = 'Find Divisor & their Sum'; 
 	require_once("../../theme.html"); 
 ?>
 

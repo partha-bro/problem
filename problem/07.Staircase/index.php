@@ -1,5 +1,6 @@
 <?php
-	$tittle = 'Staircase';
+	$title = "StairCase";
+	$question = 'Staircase';
 	require_once("../../theme.html");
 
 	$n = 4;

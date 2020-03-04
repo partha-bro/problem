@@ -1,5 +1,6 @@
 <?php
-	$tittle = 'SortedSquareArray';
+	$title = "SortedSquareArray";
+	$question = 'SortedSquareArray';
 	require_once("../../theme.html");
 	
 	/**

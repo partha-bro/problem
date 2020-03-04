@@ -1,5 +1,6 @@
 <?php
-	$tittle = 'Count the total positive, nagative & zero also devided by number of array';
+	$title = "Array Plus Minus";
+	$question = 'Count the total positive, nagative & zero also devided by number of array';
 	require_once("../../theme.html");
 
 	$arr = [-4,3,-9,0,4,1];

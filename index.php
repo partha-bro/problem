@@ -1,5 +1,6 @@
 <?php
-	$tittle = 'code ['.date("d-M-Y").']';
+	$title = "Problems";
+	$question = 'code ['.date("d-M-Y").']';
 	require_once("theme.html");
 
 	$dir = "problem";

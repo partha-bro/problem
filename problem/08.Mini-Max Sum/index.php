@@ -1,5 +1,6 @@
 <?php
-	$tittle = 'Mini-Max Sum';
+	$title = "Mini-Max & Sum";
+	$question = 'Mini-Max Sum';
 	require_once("../../theme.html");
 
 	$arr = [5,3,4,1,2];

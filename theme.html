@@ -1,6 +1,6 @@
 <html lang="en">
 	<head>
-		 	<title>Problems</title>
+		 	<title><?php echo $title; ?></title>
 			<!-- Bootstrap core CSS -->
 			<link href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/test/rapid/css/bootstrap.min.css" rel="stylesheet">
 			<!-- Material Design Bootstrap -->
@@ -12,4 +12,4 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 <body>
-	<?php echo "<h1>".strtoupper($tittle)."</h1><hr>"; ?>
+	<?php echo "<h1>".strtoupper($question)."</h1><hr>"; ?>

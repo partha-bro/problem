@@ -1,5 +1,6 @@
 <?php
-	$tittle = 'Diagonal Difference';
+	$title = "Diagonal Difference";
+	$question = 'Diagonal Difference';
 	require_once("../../theme.html");
 
 	function diagonalDiff($arr){

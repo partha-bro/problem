@@ -1,6 +1,7 @@
 
 <?php
-	$tittle = 'Calculator';
+	$title = "Calculator";
+	$question = 'Calculator';
 	require_once("../../theme.html");
 	
 	

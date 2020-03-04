@@ -1,5 +1,6 @@
 <?php
-	$tittle = 'multiples of 3 or 5, their sum';
+	$title = "multiples of 3 or 5, their sum";
+	$question = 'multiples of 3 or 5, their sum';
 	require_once("../../theme.html");
 
 	
