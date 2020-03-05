@@ -5,7 +5,7 @@
 			example: Time t = 4 marks the beginning of the second cycle. It is double the number displayed at the beginning of the first cycle: 2x3=6. This is also shown in the diagram in the Problem Statement above.";
 	require_once("../../theme.html");
 
-	$t = [4,10,17,100];
+	$t = [3,4,10,17,100,10000];
 	foreach ($t as $key => $value) {
 		# code...
 		$result = strangeCounter($value);
@@ -38,20 +38,18 @@
 		}while ($i < $t);
 
 		//find value
-		$round = 3*pow(2, $flag);
-		echo "flag=".$flag." Round=".$round." pre_time=".$pre_time." time=".$time;
+		// $round = 3*pow(2, $flag);
+		// echo "flag=".$flag." Round=".$round." pre_time=".$pre_time." time=".$time;
 
-		for ($i=0; $i < $round; $i++) { 
+		$arr = range($pre_time, $time,1);
+		// print_r($arr);
+		if (in_array($t, $arr)) {
 			# code...
-			$pre_time++;
-			if ($pre_time == $t) {
-				# code...
-				$var = $i;
-			}else{
-				// $pre_time++;
-			}
+			$key = array_search ($t, $arr);
+			$var = $key-1;
 		}
-		echo " var=$var <br/>";
+
+		// echo " var=$var <br/>";
 		$output = (3*pow(2, $flag)) - $var;
 		return $output;
 	}
