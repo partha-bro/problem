@@ -10,3 +10,6 @@ Options All -Indexes
 #block caching
 Header unset Cache-Control
 Header append Cache-Control "no-cache, must-revalidate"
+
+#run php code through html file witn html extension
+AddType application/x-httpd-php .htm .html
