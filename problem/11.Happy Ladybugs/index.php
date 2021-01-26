@@ -1,7 +1,7 @@
 <?php
 
 	$title = "Happy Ladybugs";
-	$question = "Happy Ladybugs is a board game having the following properties:<br/>
+	$question = "<pre>Happy Ladybugs is a board game having the following properties:<br/>
 
     1.The board is represented by a string, b, of length n. The i character of the string,b[i], denotes the i cell of the board.<br/>
 
@@ -16,7 +16,7 @@ Given the values of n and b for g games of Happy Ladybugs, determine if it's pos
 For each game, print YES on a new line if all the ladybugs can be made happy through some number of moves. Otherwise, print NO.<br/>
 
 <br/><br/>
-As an example, b=[YYR_B_BR]. You can move the rightmost B and R to make b=[YYRRBB__] and all the ladybugs are happy.";
+As an example, b=[YYR_B_BR]. You can move the rightmost B and R to make b=[YYRRBB__] and all the ladybugs are happy.</pre>";
 	require_once("../../theme.html");
 
 	$b = ["4","7","RBY_YBR","6","X_Y__X","2","__","6","B_RRBR"];

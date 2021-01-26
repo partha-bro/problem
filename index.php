@@ -15,7 +15,7 @@
 					if($file != ".."){
 							echo "<tr>";
 								echo "<td class='text-success'>" . $file. "</td>";
-								echo "<td class='right text-info'>$time </td>";
+								echo "<td class='right text-info'>==>&nbsp;&nbsp;&nbsp;&nbsp; </td>";
 								echo "<td class='right'><a class='btn btn-sm text-success' href='".$dir."/".$file."' target='_blank'>play</a></td>";
 							echo "</tr>";
 					}

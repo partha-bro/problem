@@ -1,12 +1,12 @@
 <?php
 	$title = "Grading Students";
-	$question = "Sam is a professor at the university and likes to round each student's grade according to these rules:<br/>
+	$question = "<pre>Sam is a professor at the university and likes to round each student's grade according to these rules:<br/>
 
 If the difference between the grade and the next multiple of 5 is less than 3, round grade up to the next multiple of 5.<br/>
 If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.<br/>
 For example, grade=84 will be rounded to 85 but grade=29 will not be rounded because the rounding would result in a number that is less than 40.<br/>
 
-Given the initial value of grade for each of Sam's n students, write code to automate the rounding process.";
+Given the initial value of grade for each of Sam's n students, write code to automate the rounding process.</pre>";
 	require_once("../../theme.html");
 
 	$grades = [73,67,38,33];
