@@ -1,6 +1,4 @@
-<p align="center">
-	<h1> Problem </h1>
-</p>
+# Problem
 
 ## Solve Some Problem by PHP language
 
