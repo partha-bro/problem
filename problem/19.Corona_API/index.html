@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Corona Virus | API</title>
+
+	<style type="text/css">
+		#body{
+			height: 100%;
+			width: 70%;
+			padding-left: 15%;
+			padding-right: 15%;
+		}
+		#header{
+			background-color: brown;
+			padding: 5px 5px;
+			color: white;
+		}
+		#input{
+			background-color: pink;
+			padding: 5px 5px;
+			color: black;
+		}
+		#model{
+			background-color: grey;
+			padding: 5px 5px;
+			color: white;
+		}
+		table{
+			height: 100%;
+			width: 100%;
+			font-weight: bolder;
+		}
+		thead{
+			background-color: yellow;
+		}
+		#edit{
+			background-color: green;
+			color: white;
+			font-weight: bold;
+		}
+		#delete{
+			background-color: red;
+			color: white;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+
+	<div id='body'>
+		<div id='header' align="center">
+			<h2><span align='left'>Corona Virus Reports</span> || <span id="date" align='right'></span></h2>
+			<form>
+				<label>Contry:</label>
+				<select id="country">
+					<option>Select a Country</option>
+
+				</select>
+			</form>
+
+		</div>
+		<br/>
+		<table id="table-data" border="2" cellspacing="0" cellpadding="5">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Country</th>
+					<th>CountryCode</th>
+					<th>NewConfirmed</th>
+					<th>NewDeaths</th>
+					<th>NewRecovered</th>
+					<th>TotalConfirmed</th>
+					<th>TotalDeaths</th>
+					<th>TotalRecovered</th>
+				</tr>
+			</thead>
+			<tbody align="center"id="load-Data" >
+				<tr id="default-data">
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous">
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		function loadData(){
+			$.ajax({
+				url: 'https://api.covid19api.com/summary',
+				// url: 'http://localhost/test/personal/problem/problem/19.Corona_API/json/summary.json',
+				type: 'GET',
+				datatype: 'json',
+				success: function(data){
+					// console.table(data);
+
+					// Fetch the last Date of corona report
+					var dt = data.Date;
+					dt = dt.substring(0,10);
+					$('#date').append( "Date: " + dt );
+
+					$('#load-Data').append('<tr id="global-data"><td>1</td> <td>Global</td> <td></td> <td>'+data.Global.NewConfirmed+'</td> <td>'+data.Global.NewDeaths+'</td>  <td>'+data.Global.NewRecovered+'</td> <td>'+data.Global.TotalConfirmed+'</td> <td>'+data.Global.TotalDeaths+'</td> <td>'+data.Global.TotalRecovered+'</td>  </tr>');
+
+					$.each(data.Countries,function(key,value){
+						
+						// console.table(value.Country);
+						$('#country').append('<option value='+value.Country+'>'+value.Country+'</option>');
+
+					});
+				}
+			});
+		}
+
+		loadData();
+
+		$('select#country').change(function(){
+			var selectedCountry = $(this).children('option:selected').val();
+
+			// remove the global data
+			$('#global-data').fadeOut();
+
+			$.ajax({
+				url: 'https://api.covid19api.com/summary',
+				// url: 'http://localhost/test/personal/problem/problem/19.Corona_API/json/summary.json',
+				type: 'get',
+				datatype: 'json',
+				success: function(data){
+					// console.table(data);
+					$.each(data.Countries,function(key,value){
+						
+						console.table(value);
+						if (value.Country == selectedCountry) {
+							$('#load-Data').append('<tr><td>1</td> <td>'+value.Country+'</td> <td>'+value.CountryCode+'</td> <td>'+value.NewConfirmed+'</td> <td>'+value.NewDeaths+'</td>  <td>'+value.NewRecovered+'</td> <td>'+value.TotalConfirmed+'</td> <td>'+value.TotalDeaths+'</td> <td>'+value.TotalRecovered+'</td>  </tr>');
+						}
+					});
+				}
+			});
+		});
+	});
+</script>
+</html>
