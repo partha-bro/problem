@@ -1,6 +1,6 @@
 # Welcome to Problem Solve List
 
-## Solve Some Problem by PHP language
+## Programmong language :: PHP
 
 ### 01.Find Divisor & their Sum
 	https://github.com/partha-bro/problem/tree/master/problem/01.Find%20Divisor%20%26%20their%20Sum
